@@ -25,7 +25,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     uint256 public tokenIds;
 
     // Whitelist contract instance
-    Iwhitelist whitelist;
+    IWhitelist whitelist;
 
     // boolean to keep track of when presale started
     bool public presaleStarted;
@@ -64,7 +64,7 @@ contract CryptoDevs is ERC721Enumerable, Ownable {
     function presaleMint() public payable onlyWhenNotPaused {
         require(presaleStarted && block.timestamp < presaleEnded, "Presale is not running");
         require(whitelist.whitelistedAddresses(msg.sender), "You are not whitelisted");
-        require(tokeIds < maxTokenIds, "Exceeded maximum Crypto Devs supply");
+        require(tokenIds < maxTokenIds, "Exceeded maximum Crypto Devs supply");
         require(msg.value >= _price, "Ether sent is not correct");
         tokenIds += 1;
         // _safeMint is a safer version of the _mint function as it ensures that
