@@ -581,4 +581,4 @@ export const abit = [
       "type": "receive"
     }
   ]
-export const NFT_CONTRACT_ADDRESS = "0xCf987f6632573A15B69B3F059A271C106394C27d"
+export const NFT_CONTRACT_ADDRESS = "0xFf3cf3436270b9B07a2ac4Bd3313176812241f0f"
