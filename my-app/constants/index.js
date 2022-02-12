@@ -1,4 +1,4 @@
-export const abit = [
+export const abi = [
     {
       "inputs": [
         {
